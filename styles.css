@@ -1,0 +1,231 @@
+:root {
+  color-scheme: dark;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fafafa;
+  background: #242424;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.particle-trail {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.page {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(24px, 5vw, 64px);
+}
+
+.site-header {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.site-name {
+  color: inherit;
+  text-decoration: none;
+}
+
+.page-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.page-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-right: 16px;
+  color: #b5b5b5;
+  text-decoration: none;
+}
+
+.page-links a:hover,
+.page-links a[aria-current="page"] {
+  color: #fafafa;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+a:focus-visible {
+  outline: 2px solid #fafafa;
+  outline-offset: 4px;
+}
+
+.content-page {
+  align-items: flex-start;
+  width: 100%;
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.content-page h1 {
+  width: auto;
+  margin-bottom: 20px;
+  font-size: clamp(36px, 6vw, 64px);
+}
+
+.content-page p {
+  margin: 0 0 16px;
+  color: #b5b5b5;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.content-page p a {
+  color: #fafafa;
+  text-underline-offset: 4px;
+}
+
+.personal-interests {
+  width: 100%;
+  margin-top: 24px;
+  padding-top: 32px;
+  border-top: 1px solid #555;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  color: #aaa;
+}
+
+.social-links a:hover,
+.social-links a:focus-visible {
+  color: #fafafa;
+  background: #333;
+}
+
+.social-links a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.social-links svg {
+  width: 24px;
+  height: 24px;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-block: 64px;
+}
+
+.subtitle {
+  margin: 20px 0 0;
+  color: #b5b5b5;
+  font-size: clamp(18px, 2.5vw, 24px);
+  line-height: 1.5;
+  text-align: center;
+}
+
+h1 {
+  /* Reserve the full line so the greeting stays still as it types. */
+  width: 13ch;
+  margin: 0;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: clamp(24px, 6.5vw, 96px);
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.typewriter {
+  display: block;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  /* Use the same character width for every typing step. */
+  letter-spacing: 0;
+  animation: typing 1.8s steps(13, end) 0.45s both;
+}
+
+.typewriter::after {
+  content: "";
+  position: absolute;
+  inset: 0.12em 0 0.12em auto;
+  width: 2px;
+  background: transparent;
+  animation: cursor 0.85s step-end 6;
+}
+
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px 24px;
+  padding-top: 20px;
+  border-top: 1px solid #3e3e3e;
+  color: #aaa;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes cursor {
+  0%, 100% { background: transparent; }
+  50% { background: #fafafa; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .particle-trail {
+    display: none;
+  }
+
+  .typewriter,
+  .typewriter::after {
+    animation: none;
+  }
+}
