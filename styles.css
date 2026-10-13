@@ -93,16 +93,37 @@ a:focus-visible {
   line-height: 1.7;
 }
 
-.content-page p a {
+.content-page p a,
+.semester-classes a {
   color: #fafafa;
   text-underline-offset: 4px;
 }
 
-.personal-interests {
+.personal-interests,
+.semester-classes {
   width: 100%;
   margin-top: 24px;
   padding-top: 32px;
   border-top: 1px solid #555;
+}
+
+.semester-classes h2 {
+  margin: 0 0 16px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.semester-classes ol {
+  margin: 0 0 16px;
+  padding-left: 1.5em;
+  color: #b5b5b5;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.semester-classes li + li {
+  margin-top: 8px;
 }
 
 .social-links {
